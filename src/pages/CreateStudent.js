@@ -86,15 +86,16 @@ function CreateStudent({ setShowForm, handleClick }) {
                         <input className="input" id="department" type="text" required />
                     </div>
                 </div>
-
-                {/* File upload input */}
-                <div>
-                    <input type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+                <div className="form-row">
+                    <div>
+                        <input type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+                    </div>
                 </div>
-
-                <button className="btn-add-class bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" type="submit">
-                    Add Student
-                </button>
+                <div className="form-row">
+                    <button className="btn-add-class bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" type="submit">
+                        Add Student
+                    </button>
+                </div>
             </form>
         </div>
     );

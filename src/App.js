@@ -10,10 +10,12 @@ import CreateClass from './pages/CreateClass'
 import StudentDashboard from './pages/StudentDashboard';
 import StudentPage from './pages/StudentPage';
 
+
 import TeacherPage from './pages/TeacherPage';
 import ProfilePopPage from './pages/ProfilePopPage';
 import AdminPage from './pages/AdminPage';
 import EditProfile from './pages/Editprofile';
+
 function App() {
   return (
     <Router> 
