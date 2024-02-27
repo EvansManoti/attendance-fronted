@@ -6,17 +6,39 @@ function CreateStudent({ setShowForm, handleClick }) {
     }
 
     return (
-        <div className="page-over">
+        <div className="page-over flex justify-center items-center">
             <form
                 onSubmit={handleSubmit}
-                className="flex w-full flex-col justify-center gap-4 max-w-md md:max-w-3xl"
+                className="bg-white p-8 rounded-md shadow-md max-w-md"
             >
-                {/* First input field */}
-                <div className="form-row">
-                    <div className="w-full">
-                        <div className="mb-2 block">
-                            <label htmlFor="first_name">First Name</label>
-                        </div>
+                <div className="flex justify-between items-center mb-4">
+                    <h3 className="text-xl font-semibold text-center">
+                        Create Student Profile
+                    </h3>
+                    <button
+                        className="w-9 h-9 hover:bg-orange-100 rounded-full p-1"
+                        onClick={handleClick}
+                        type="button"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="ionicon"
+                            viewBox="0 0 512 512"
+                        >
+                            <path
+                                fill="black"
+                                stroke="currentColor"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="32"
+                                d="M368 368L144 144M368 144L144 368"
+                            />
+                        </svg>
+                    </button>
+                </div>
+                <div className="flex flex-col md:flex-row gap-4">
+                    <div className="w-full md:w-1/2">
+                        <label htmlFor="first_name">First Name</label>
                         <input
                             className="input"
                             id="first-name"
@@ -25,10 +47,8 @@ function CreateStudent({ setShowForm, handleClick }) {
                             placeholder="Jane"
                         />
                     </div>
-                    <div className="w-full">
-                        <div className="mb-2 block">
-                            <label htmlFor="last_name">Last Name</label>
-                        </div>
+                    <div className="w-full md:w-1/2">
+                        <label htmlFor="last_name">Last Name</label>
                         <input
                             className="input"
                             id="last-name"
@@ -38,13 +58,9 @@ function CreateStudent({ setShowForm, handleClick }) {
                         />
                     </div>
                 </div>
-
-                {/* Second input field */}
-                <div className="form-row">
-                    <div className="w-full">
-                        <div className="mb-2 block">
-                            <label htmlFor="email">Email</label>
-                        </div>
+                <div className="flex flex-col md:flex-row gap-4">
+                    <div className="w-full md:w-1/2">
+                        <label htmlFor="email">Email</label>
                         <input
                             className="input"
                             id="email"
@@ -53,10 +69,8 @@ function CreateStudent({ setShowForm, handleClick }) {
                             required
                         />
                     </div>
-                    <div className="w-full">
-                        <div className="mb-2 block">
-                            <label htmlFor="phone_number">Phone Number</label>
-                        </div>
+                    <div className="w-full md:w-1/2">
+                        <label htmlFor="phone_number">Phone Number</label>
                         <input
                             className="input"
                             id="phone_number"
@@ -66,28 +80,20 @@ function CreateStudent({ setShowForm, handleClick }) {
                         />
                     </div>
                 </div>
-
-                {/* Third input field */}
-                <div className="form-row">
+                <div className="flex flex-col md:flex-row gap-4">
                     <div className="w-full max-w-[280px]">
-                        <div className="mb-2 block">
-                            <label htmlFor="course">Course</label>
-                        </div>
+                        <label htmlFor="course">Course</label>
                         <input className="input" id="department" type="text" required />
                     </div>
                 </div>
-
-                {/* File upload input */}
                 <div className="form-row">
                     <div>
                         <input type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
                     </div>
                 </div>
-
-                {/* Button */}
                 <div className="form-row">
-                    <button className="py-3 px-6 bg-orange-600 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-opacity-75" type="submit">
-                        Create Student
+                    <button className="btn-add-class bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" type="submit">
+                        Add Student
                     </button>
                 </div>
             </form>
@@ -96,4 +102,3 @@ function CreateStudent({ setShowForm, handleClick }) {
 }
 
 export default CreateStudent;
-
