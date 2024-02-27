@@ -34,38 +34,6 @@ function Login() {
         </div>
         <form className="flex w-full flex-col justify-center gap-4" onSubmit={handleSubmit}>
           <h3 className="text-xl font-semibold text-center">Login</h3>
-          <div className="mb-2 block">
-            <Label value="Select Role(s)" />
-          </div>
-          <div className="flex gap-4">
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                checked={roles.admin}
-                onChange={() => handleRoleChange('admin')}
-                className="rounded-full"
-              />
-              Admin
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                checked={roles.teacher}
-                onChange={() => handleRoleChange('teacher')}
-                className="rounded-full"
-              />
-              Teacher
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                checked={roles.student}
-                onChange={() => handleRoleChange('student')}
-                className="rounded-full"
-              />
-              Student
-            </label>
-          </div>
           <div>
             <div className="mb-2 block">
               <Label htmlFor="email" value="Your email" />
