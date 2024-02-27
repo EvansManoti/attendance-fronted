@@ -1,94 +1,113 @@
-import React, { useState } from 'react';
-import Nav from '../components/Nav';
-import CreateStudent from './CreateStudent'; // corrected the filename
-import { Table } from 'flowbite-react';
+import React from 'react';
 
-function StudentDashboard() {
-  const [showForm, setShowForm] = useState(false);
+function CreateStudent({ setShowForm, handleClick }) {
+    function handleSubmit(e) {
+        e.preventDefault();
+    }
 
-  function handleClick() {
-    setShowForm(!showForm);
-  }
+    return (
+        <div className="page-over">
+            <form
+                onSubmit={handleSubmit}
+                className="flex w-full flex-col justify-center gap-4 max-w-md md:max-w-3xl"
+            >
+                <div className="flex justify-between items-center mb-4">
+                    <h3 className="text-xl font-semibold text-center">
+                        Create student Profile
+                    </h3>
+                    <button
+                        className="w-9 h-9 hover:bg-orange-100 rounded-full p-1"
+                        onClick={handleClick}
+                        type="button"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="ionicon"
+                            viewBox="0 0 512 512"
+                        >
+                            <path
+                                fill="black"
+                                stroke="currentColor"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="32"
+                                d="M368 368L144 144M368 144L144 368"
+                            />
+                        </svg>
+                    </button>
+                </div>
+                <div className="form-row">
+                    <div className="w-full">
+                        <div className="mb-2 block">
+                            <label htmlFor="first_name">First Name</label>
+                        </div>
+                        <input
+                            className="input"
+                            id="first-name"
+                            type="text"
+                            required
+                            placeholder="Jane"
+                        />
+                    </div>
+                    <div className="w-full">
+                        <div className="mb-2 block">
+                            <label htmlFor="last_name">Last Name</label>
+                        </div>
+                        <input
+                            className="input"
+                            id="last-name"
+                            type="text"
+                            required
+                            placeholder="Doe"
+                        />
+                    </div>
+                </div>
+                <div className="form-row">
+                    <div className="w-full">
+                        <div className="mb-2 block">
+                            <label htmlFor="email">Email</label>
+                        </div>
+                        <input
+                            className="input"
+                            id="email"
+                            type="email"
+                            placeholder="janedoe@gmail.com"
+                            required
+                        />
+                    </div>
+                    <div className="w-full">
+                        <div className="mb-2 block">
+                            <label htmlFor="phone_number">Phone Number</label>
+                        </div>
+                        <input
+                            className="input"
+                            id="phone_number"
+                            type="text"
+                            required
+                            placeholder="07********"
+                        />
+                    </div>
+                </div>
+                <div className="form-row">
+                    <div className="w-full max-w-[280px]">
+                        <div className="mb-2 block">
+                            <label htmlFor="course">Course</label>
+                        </div>
+                        <input className="input" id="department" type="text" required />
+                    </div>
+                </div>
 
-  return (
-    <div>
-      StudentDashboard
-      {showForm && <CreateStudent handleClick={handleClick} setShowForm={setShowForm} />}
-      <Nav />
-      <main className="container">
-        <div className="flex justify-between items-center mb-10 mt-14">
-          <h3 className="text-2xl font-semibold">Faculties</h3>
-          <button onClick={handleClick} className="btn py-2">+ Add</button>
+                {/* File upload input */}
+                <div>
+                    <input type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+                </div>
+
+                <button className="py-3 px-6 bg-orange-600 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-opacity-75" type="submit">
+                    Create Student
+                </button>
+            </form>
         </div>
-        <div className="overflow-x-auto">
-          <Table striped>
-            <Table.Head>
-              <Table.HeadCell>ID</Table.HeadCell>
-              <Table.HeadCell>First Name</Table.HeadCell>
-              <Table.HeadCell>Last Name</Table.HeadCell>
-              <Table.HeadCell>Email</Table.HeadCell>
-              <Table.HeadCell>Faculty</Table.HeadCell>
-              <Table.HeadCell>Phone Number</Table.HeadCell>
-              <Table.HeadCell>
-                <span className="sr-only">Edit</span>
-              </Table.HeadCell>
-              <Table.HeadCell>
-                <span className="sr-only">Delete</span>
-              </Table.HeadCell>
-            </Table.Head>
-            <Table.Body className="divide-y">
-              <Table.Row className="bg-white">
-                <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">54215
-                </Table.Cell>
-                <Table.Cell>Mike</Table.Cell>
-                <Table.Cell>Scott</Table.Cell>
-                <Table.Cell>examle@gmail.com</Table.Cell>
-                <Table.Cell>IT</Table.Cell>
-                <Table.Cell>+25684855</Table.Cell>
-                <Table.Cell>
-                  <a
-                    href="#"
-                    className="font-medium text-m-orange hover:underline">
-                    Edit
-                  </a>
-                </Table.Cell>
-                <Table.Cell>
-                  <a
-                    href="#"
-                    className="font-medium text-m-orange hover:underline">
-                    Delete
-                  </a>
-                </Table.Cell>
-              </Table.Row>
-              <Table.Row className="bg-white">
-                <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">54215
-                </Table.Cell>
-                <Table.Cell>Mike</Table.Cell>
-                <Table.Cell>Scott</Table.Cell>
-                <Table.Cell>examle@gmail.com</Table.Cell>
-                <Table.Cell>IT</Table.Cell>
-                <Table.Cell>+25684855</Table.Cell>
-                <Table.Cell>
-                  <a
-                    href="#"
-                    className="font-medium text-m-orange hover:underline">
-                    Edit
-                  </a>
-                </Table.Cell>
-                <Table.Cell>
-                  <a
-                    href="#"
-                    className="font-medium text-m-orange hover:underline">
-                    Delete
-                  </a>
-                </Table.Cell>
-              </Table.Row>
-            </Table.Body>
-          </Table>
-        </div>
-      </main>
-    </div>
-  );
+    );
 }
 
-export default StudentDashboard;
+export default CreateStudent;

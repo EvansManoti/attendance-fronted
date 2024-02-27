@@ -1,3 +1,38 @@
+/* Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom CSS */
+.login-container {
+    @apply min-h-screen flex items-center p-4;
+}
+
+.form-container {
+    @apply flex flex-col md:flex-row gap-12 w-full max-w-lg md:max-w-3xl mx-auto px-4 sm:px-8 md:px-12 py-24 rounded-3xl shadow-lg bg-blue-400 min-w-min ; 
+}
+
+.input {
+    @apply px-4 py-3 w-full rounded-lg border-neutral-300 focus:ring-orange-400 focus:border-orange-400 focus:outline-none;
+}
+
+.btn {
+    @layer px-4 py-3 rounded-lg text-white background-color:;
+}
+
+.container {
+    @apply w-full max-w-7xl mx-auto px-4;
+}
+
+.page-over {
+    @layer absolute top-0 left-0 h-full w-full z-50 bg-light flex justify-center items-center px-4;
+}
+
+.page-over form {
+    @layer max-w-2xl bg-white px-4 sm:px-8 md:px-12 py-24 rounded-3xl shadow-lg; /* Replaced shadow-bs-light with shadow-lg */
+}
+
+.form-row {
+    @apply flex flex-col md:flex-row gap-4 md:gap-6;
+}
+
