@@ -1,10 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import AdminDashboard from './pages/AdminDashboard';
-
 import CreateTeacher from './pages/CreateTeacher';
 import CreateStudent from './pages/CreateStudent';
-import CreateClass from './pages/CreateClass'
+import CreateClass from './pages/CreateClass';
 
 
 import StudentDashboard from './pages/StudentDashboard';
@@ -15,6 +14,7 @@ import TeacherPage from './pages/TeacherPage';
 import ProfilePopPage from './pages/ProfilePopPage';
 import AdminPage from './pages/AdminPage';
 import EditProfile from './pages/Editprofile';
+
 
 function App() {
   return (
