@@ -1,0 +1,33 @@
+/* Style the form */
+form {
+    background-color: rgba(99, 162, 172, 0.83); /* Blue background color */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Style the input fields */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"] {
+    background-color: #e1e6e7d8; /* Gray background color */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+  }
+  
+  /* Style the submit button */
+  button {
+    background-color: #16b40e; /* Blue background color */
+    color: #e6e3e3; /* White text color */
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for the submit button */
+  button:hover {
+    background-color: #bfcbd4; /* Lighter blue on hover */
+  }
