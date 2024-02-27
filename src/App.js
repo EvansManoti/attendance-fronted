@@ -1,7 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import AdminDashboard from './pages/AdminDashboard';
-import StudentDashboard from './pages/StudentDashboard';
+import CreateTeacher from './pages/CreateTeacher';
+import CreateStudent from './pages/CreateStudent';
+import CreateClass from './pages/CreateClass'
+
+
 
 function App() {
   return (
@@ -9,6 +13,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/teacher" element={<CreateTeacher />} />
+        <Route path="/student" element={<CreateStudent />} />
+        <Route path="/form" element={<CreateClass />} />
       </Routes>
     </Router>
   );
