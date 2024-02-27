@@ -13,6 +13,7 @@ import StudentPage from './pages/StudentPage';
 import TeacherPage from './pages/TeacherPage';
 import ProfilePopPage from './pages/ProfilePopPage';
 import AdminPage from './pages/AdminPage';
+import EditProfile from './pages/Editprofile';
 function App() {
   return (
     <Router> 
@@ -31,7 +32,7 @@ function App() {
         <Route path="/teacherpage" element={<TeacherPage />} />
         <Route path="/profilepoppage" element={<ProfilePopPage />} />
         <Route path="/adminpage" element={<AdminPage />} />
-
+        <Route path="/editprofile" element={<EditProfile />} />
       </Routes>
     </Router>
   );
