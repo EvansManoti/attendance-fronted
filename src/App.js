@@ -4,6 +4,10 @@ import AdminDashboard from './pages/AdminDashboard';
 import StudentDashboard from './pages/StudentDashboard';
 import StudentPage from './pages/StudentPage';
 
+import TeacherPage from './pages/TeacherPage';
+
+
+
 function App() {
   return (
     <Router> 
@@ -12,6 +16,10 @@ function App() {
         <Route path="/admin" element={<AdminDashboard />} />
 
         <Route path="/student" element={<StudentDashboard />} />
+
+        <Route path="/studentpage" element={<StudentPage />} />
+        <Route path="/teacherpage" element={<TeacherPage />} />
+
 
       </Routes>
     </Router>
