@@ -1,23 +1,25 @@
-import React from 'react'
-import close from '../assets/images/close.svg'
+import React from "react";
+import close from "../assets/images/close.svg";
 
-function CreateTeacher({setShowForm, handleClick}) {
-    function handleSubmit(e){
-        e.preventDefault()
-    }
+function CreateTeacher({ setShowEditForm, handleEdit }) {
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
   return (
     <div className="add-teacher-over">
       <form
         onSubmit={handleSubmit}
-        className="flex w-full flex-col justify-center gap-4 max-w-md md:max-w-3xl">
+        className="flex w-full flex-col justify-center gap-4 max-w-md md:max-w-3xl"
+      >
         <div className="flex justify-between items-center mb-4">
           <h3 className="text-2xl font-semibold text-center">
-            Create Teacher Profile
+            Edit Student Profile
           </h3>
           <button
             className="hover:bg-orange-100 rounded-full p-1"
-            onClick={handleClick}
-            type="button">
+            onClick={handleEdit}
+            type="button"
+          >
             <img className="inline w-7 h-7" src={close} alt="icon" />
           </button>
         </div>
@@ -69,7 +71,7 @@ function CreateTeacher({setShowForm, handleClick}) {
         </button>
       </form>
     </div>
-  )
+  );
 }
 
-export default CreateTeacher
+export default CreateTeacher;
