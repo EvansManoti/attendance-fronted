@@ -1,111 +1,75 @@
-import React, { Component } from 'react';
+import React from 'react'
+import close from '../assets/images/close.svg'
 
-class Form extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      className: '',
-      startDate: '',
-      endDate: '',
-      startTime: '',
-      endTime: '',
-      isOpen: false // Add isOpen state to control form visibility
-    };
+
+function CreateClass({ setShowForm, handleClose }) {
+  function handleSubmit(e) {
+    e.preventDefault()
   }
-
-  handleChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-  };
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-    // Here you can implement your logic for form submission
-    console.log('Form submitted with state:', this.state);
-    // You can also call a function passed from parent component as a prop
-    this.setState({
-      isOpen: false // Close the form after submission
-    });
-  };
-
-  render() {
-    return (
-      <div className="flex justify-center items-center">
-        <button onClick={() => this.setState({ isOpen: true })} className="btn-create-class bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">Create Class</button>
-        {this.state.isOpen && (
-          <div className="popup fixed inset-0 flex justify-center items-center bg-gray-800 bg-opacity-50">
-            <div className="popup-inner bg-white rounded-lg p-6 max-w-md w-full">
-              <form onSubmit={this.handleSubmit} className="space-y-4">
-                <div>
-                  <label htmlFor="className" className="block">Class Name:</label>
-                  <input
-                    type="text"
-                    id="className"
-                    name="className"
-                    value={this.state.className}
-                    onChange={this.handleChange}
-                    required
-                    className="input"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="startDate" className="block">Start Date:</label>
-                  <input
-                    type="date"
-                    id="startDate"
-                    name="startDate"
-                    value={this.state.startDate}
-                    onChange={this.handleChange}
-                    required
-                    className="input"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="endDate" className="block">End Date:</label>
-                  <input
-                    type="date"
-                    id="endDate"
-                    name="endDate"
-                    value={this.state.endDate}
-                    onChange={this.handleChange}
-                    required
-                    className="input"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="startTime" className="block">Start Time:</label>
-                  <input
-                    type="time"
-                    id="startTime"
-                    name="startTime"
-                    value={this.state.startTime}
-                    onChange={this.handleChange}
-                    required
-                    className="input"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="endTime" className="block">End Time:</label>
-                  <input
-                    type="time"
-                    id="endTime"
-                    name="endTime"
-                    value={this.state.endTime}
-                    onChange={this.handleChange}
-                    required
-                    className="input"
-                  />
-                </div>
-                <div className="flex justify-end">
-                  <button onClick={() => this.setState({ isOpen: false })} type="submit" className="btn-add-class bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">Add Class</button>
-                </div>
-              </form>
+  return (
+    <div className="add-class-over" id='add-class'>
+      <form
+        onSubmit={handleSubmit}
+        className="flex w-full flex-col justify-center gap-4  ">
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-2xl font-semibold text-center">
+            Create Class
+          </h3>
+          <button
+            className="hover:bg-orange-100 rounded-full p-1"
+            onClick={handleClose}
+            type="button">
+            <img className="inline w-7 h-7" src={close} alt="icon" />
+          </button>
+        </div>
+        <div className="form-row">
+          <div className="w-full">
+            <div className="mb-2 block">
+              <label htmlFor="class_name">Class Name</label>
             </div>
+            <input className="input" id="class_name" type="text" required />
           </div>
-        )}
-      </div>
-    );
-  }
+        </div>
+        <div className="form-row">
+          <div className="w-full">
+            <div className="mb-2 block">
+              <label htmlFor="start_date">Start date</label>
+            </div>
+            <input
+              className="input"
+              id="start_date"
+              type="date"
+              required
+            />
+          </div>
+          <div className="w-full">
+            <div className="mb-2 block">
+              <label htmlFor="end_date">End date</label>
+            </div>
+            <input className="input" id="end_date" type="date" required />
+          </div>
+        </div>
+        <div className="form-row">
+          <div className="">
+            <div className="mb-2 block">
+              <label htmlFor="starts_at">Starts at</label>
+            </div>
+            <input className="input" id="starts_at" type="time" required />
+          </div>
+          <div className="">
+            <div className="mb-2 block">
+              <label htmlFor="ends_at">Ends at</label>
+            </div>
+            <input className="input" id="ends_at" type="time" required />
+          </div>
+        </div>
+
+        <button className="btn py-3 my-3" type="submit">
+          Create Class
+        </button>
+      </form>
+    </div>
+  )
 }
 
-export default Form;
+export default CreateClass

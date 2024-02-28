@@ -1,7 +1,7 @@
 import React from 'react'
 import close from '../assets/images/close.svg'
 
-function CreateTeacher({setShowForm, handleClick}) {
+function UpdateUserProfile({setShowForm, handleClick}) {
     function handleSubmit(e){
         e.preventDefault()
     }
@@ -12,7 +12,7 @@ function CreateTeacher({setShowForm, handleClick}) {
         className="flex w-full flex-col justify-center gap-4 max-w-md md:max-w-3xl">
         <div className="flex justify-between items-center mb-4">
           <h3 className="text-2xl font-semibold text-center">
-            Create Teacher Profile
+            Update Profile
           </h3>
           <button
             className="hover:bg-orange-100 rounded-full p-1"
@@ -64,12 +64,12 @@ function CreateTeacher({setShowForm, handleClick}) {
           </div>
         </div>
 
-        <button className="btn py-3 my-3" type="submit">
-          Create Profile
+        <button className="btn py-3 my-3 w-fit items-center " type="submit">
+          Update
         </button>
       </form>
     </div>
   )
 }
 
-export default CreateTeacher
+export default UpdateUserProfile;
